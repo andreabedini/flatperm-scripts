@@ -101,8 +101,7 @@ def cured_weight_2(o1, w1, o2, w2):
     return A / A.sum()
 
 def weight(os, ws):
-    A = np.multiply.reduce([w ** (o - o.mean()) for o, w in zip(os, ws)])
-    return A / A.sum()
+    return np.multiply.reduce([w ** (o - o.mean()) for o, w in zip(os, ws)])
 
 def avO_multi(sW, O, ws):
     obs = np.ix_(*list(map(range, sW.shape)))
